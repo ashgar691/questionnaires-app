@@ -1,0 +1,50 @@
+{
+  "questionnaires": [
+    {
+      "id": 1,
+      "questions": [
+        {
+          "question": "What language is your favorite?",
+          "type": "multiple",
+          "options": [
+            {
+              "name": "JavaScript"
+            },
+            {
+              "name": "TypeScript"
+            },
+            {
+              "name": "CoffeeScript"
+            }
+          ],
+          "isRequired": true
+        },
+        {
+          "question": "What do yo like about programing?",
+          "type": "text",
+          "options": [],
+          "isRequired": true
+        },
+        {
+          "question": "How was the assignment?",
+          "type": "choice",
+          "options": [
+            {
+              "name": "Easy"
+            },
+            {
+              "name": "Normal"
+            },
+            {
+              "name": "Hard"
+            },
+            {
+              "name": "Other"
+            }
+          ],
+          "isRequired": true
+        }
+      ]
+    }
+  ]
+}
