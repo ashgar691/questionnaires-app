@@ -1,0 +1,32 @@
+<ng-container *ngIf="question.display">
+
+  <div [formGroup]="form"  class="form-row">
+    <label class="label" [attr.for]="question.key">
+      {{question.label}}
+      <span class="requierd" *ngIf="!isValid">*</span>
+    </label>
+
+    <div [ngSwitch]="question.controlType">
+
+      <mat-form-field *ngSwitchCase="'text'" appearance="fill">
+        <input matInput [type]="question.type" [id]="question.key" placeholder="Your answer"
+          [formControlName]="question.key">
+      </mat-form-field>
+
+      <mat-radio-group *ngSwitchCase="'multiple'" class="group-vertical" [id]="question.key"
+        [formControlName]="question.key">
+        <mat-radio-button class="radio-btn" *ngFor="let opt of question.options" [value]="opt.value">{{opt.value}}
+        </mat-radio-button>
+      </mat-radio-group>
+
+      <section *ngSwitchCase="'choice'" class="group-vertical" formGroupName="{{question.key}}">
+        <div *ngFor="let opt of question.options">
+          <mat-checkbox [formControlName]="opt.key" [value]="opt.value">{{opt.label}}</mat-checkbox>
+          <mat-form-field *ngIf="opt.key =='other'" appearance="fill">
+            <input matInput placeholder="Your answer" [disabled]="opt.value ? true : false">
+          </mat-form-field>
+        </div>
+      </section>
+    </div>
+  </div>
+</ng-container>

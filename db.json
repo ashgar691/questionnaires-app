@@ -4,45 +4,87 @@
       "id": 1,
       "questions": [
         {
-          "question": "What language is your favorite?",
+          "key": "favoriteLanguage",
+          "label": "What language is your favorite?",
           "type": "multiple",
+          "order": 1,
+          "display":true,
           "options": [
             {
-              "name": "JavaScript"
+              "key": "javaScript",
+              "value": "JavaScript"
             },
             {
-              "name": "TypeScript"
+              "key": "typeScript",
+              "value": "TypeScript"
             },
             {
-              "name": "CoffeeScript"
+              "key": "coffeeScript",
+              "value": "CoffeeScript"
             }
           ],
-          "isRequired": true
+          "required": true
         },
         {
-          "question": "What do yo like about programing?",
+          "key": "typeScriptLanguage",
+          "label": "Why do you like TypeScript?",
           "type": "text",
-          "options": [],
-          "isRequired": true
-        },
-        {
-          "question": "How was the assignment?",
-          "type": "choice",
+          "order": 2,
+          "display":false,
           "options": [
             {
-              "name": "Easy"
+              "key": "javaScript",
+              "value": "JavaScript"
             },
             {
-              "name": "Normal"
+              "key": "typeScript",
+              "value": "TypeScript"
             },
             {
-              "name": "Hard"
-            },
-            {
-              "name": "Other"
+              "key": "coffeeScript",
+              "value": "CoffeeScript"
             }
           ],
-          "isRequired": true
+          "required": false
+        },
+        {
+          "key": "aboutPrograming",
+          "label": "What do yo like about programing?",
+          "type": "text",
+          "order": 3,
+          "display":true,
+          "options": [],
+          "required": true
+        },
+        {
+          "key": "assignmentRate",
+          "label": "How was the assignment?",
+          "type": "choice",
+          "display":true,
+          "order": 4,
+          "options": [
+            {
+              "key": "easy",
+              "label": "Easy",
+              "value": false
+            },
+            {
+              "key": "normal",
+              "label": "Normal",
+              "value": false
+            },
+            {
+              "key": "hard",
+              "label": "Hard",
+              "value": false
+            },
+            {
+              "key": "other",
+              "label": "Other",
+              "value": false
+            }
+          ],
+          "required": true
         }
       ]
     }

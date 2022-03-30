@@ -1,0 +1,23 @@
+.form-row{
+    border: 1px solid #dadce0;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    padding: 24px;
+    page-break-inside: avoid;
+    word-wrap: break-word;
+}
+
+.label{
+    font-weight: 800;
+}
+.group-vertical {
+    display: flex; flex-direction: column;
+    margin: 15px 0;
+}
+
+.radio-btn{
+    margin: 10px 0px;
+}
+.requierd{
+    color: red;
+}
