@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { QuestionBase  } from 'src/app/models/question';
+import { FormGroup, Validators } from '@angular/forms';
+import { QuestionBase } from 'src/app/models/question';
 import { QuestionControlService } from 'src/app/services/question-control.service';
 
 
@@ -24,6 +24,27 @@ export class DynamicFormComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.questionControlService.toFormGroup(this.questions as QuestionBase<string>[]);
+  }
+
+  addItem(data:string) {
+    let question = JSON.parse(data);
+    if (question.val === "TypeScript") {
+      this.questions?.forEach(res => {
+        if (res.key === "typeScriptLanguage") {
+          res.display = true;
+          res.required = true;
+          this.form.controls[res.key].addValidators(Validators.required);
+        }
+      })
+    }else{
+      this.questions?.forEach(res => {
+        if (res.key === "typeScriptLanguage") {
+          res.display = false;
+          res.required = false;
+          this.form.controls[res.key].addValidators([]);
+        }
+      })
+    }
   }
 
   onSubmit() {

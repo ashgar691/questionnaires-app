@@ -32,18 +32,6 @@
           "order": 2,
           "display":false,
           "options": [
-            {
-              "key": "javaScript",
-              "value": "JavaScript"
-            },
-            {
-              "key": "typeScript",
-              "value": "TypeScript"
-            },
-            {
-              "key": "coffeeScript",
-              "value": "CoffeeScript"
-            }
           ],
           "required": false
         },

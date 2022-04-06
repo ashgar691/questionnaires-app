@@ -15,7 +15,7 @@
 
       <mat-radio-group *ngSwitchCase="'multiple'" class="group-vertical" [id]="question.key"
         [formControlName]="question.key">
-        <mat-radio-button class="radio-btn" *ngFor="let opt of question.options" [value]="opt.value">{{opt.value}}
+        <mat-radio-button class="radio-btn" *ngFor="let opt of question.options" [value]="opt.value"  (click)="displayFunc(question, opt.value)">{{opt.value}}
         </mat-radio-button>
       </mat-radio-group>
 

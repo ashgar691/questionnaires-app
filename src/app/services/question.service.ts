@@ -19,9 +19,13 @@ export class QuestionService {
 
   getQuestions(): Observable<any> {
     return this.http.get(this.dataUrl).pipe(map((data: any) => {
+
       const questions: QuestionBase<string>[] = [];
+
       data.questions.forEach((element: any) => {
         if (element.type == "multiple") {
+          const asd= new MultipleQuestion(element);
+          console.log(asd);
           questions.push(new MultipleQuestion(element));
         }
         if (element.type == "text") {
